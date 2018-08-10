@@ -1,0 +1,11 @@
+<!--components/navi/navi.wxml-->
+<view class='container'>
+  <image class="navi-icon navi-left"
+    bind:tap="onLeft"        
+    src="{{latest ? disLeftSrc : leftSrc}}" />
+  <text class="title">{{title}}</text>
+  <image class="navi-icon navi-right"
+    bind:tap="onRight"
+    disable="{{!first}}"
+    src="{{first ? disRightSrc : rightSrc}}" />
+</view>

@@ -1,0 +1,18 @@
+<!-- 组件通过属性传值 -->
+<view class="container">
+  <view class="header">
+    <v-epsoide class="epsoide" index="{{classic.index}}"></v-epsoide>
+    <v-like class="like"
+      bind:like="onLike"
+      like="{{classic.like_status}}"
+      count="{{classic.fav_nums}}"/>
+  </view>
+  <v-movies img="{{classic.image}}" 
+    content="{{classic.content}}" />
+  <v-navi class="navi"
+    bind:right="onNext"
+    bind:left="onPrevious"
+    title="{{classic.title}}"
+    first="{{first}}"
+    latest="{{latest}}" />
+</view>
