@@ -19,8 +19,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // 数据更新, storage
     classicModel.getLatest((res) =>{
-      console.log(res)
       this.setData({
         classic: res
       })
@@ -30,12 +30,20 @@ Page({
     let behavior = event.detail.behavior
     likeModel.like(behavior, this.data.classic.id, this.data.classic.type)
   },
-  methods: {
-    onPrevious: function(){
+  onPrevious: function (event) {
+    let index = this.data.classic.index
+    classicModel.getPrevious(index, (res) => {
+      this.setData({
+        classic: res,
+        latest: classicModel.isLatest(res.index),
+        first: classicModel.isFirst(res.index)
+      })
+    })
+  },
+  onNext: function () {
 
-    },
-    onNext: function(){
-      
-    }
+  },
+  methods: {
+    
   }
 })

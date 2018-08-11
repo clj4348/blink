@@ -10,8 +10,8 @@
   <v-movies img="{{classic.image}}" 
     content="{{classic.content}}" />
   <v-navi class="navi"
-    bind:right="onNext"
-    bind:left="onPrevious"
+    bind:left="onNext"
+    bind:right="onPrevious"
     title="{{classic.title}}"
     first="{{first}}"
     latest="{{latest}}" />
