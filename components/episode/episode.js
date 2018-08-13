@@ -1,4 +1,3 @@
-// components/epsoide/epsoide.js
 Component({
   /**
    * 组件的属性列表
